@@ -9,7 +9,12 @@ class Calendar
 {
     static void Main(string[] args)
     {
-        int CellInteriorLength = 34;
+        //Can resize the calendar here (min. 3)
+        int calendarSize = 3;
+
+        //Holds the Interior length can resize from calendarSize
+        int CellInteriorLength = calendarSize*7-1;
+        int singleCellLength = (CellInteriorLength - 6) / 7;
         Console.Write(@"Enter month and year in format mm.yyyy (ex. ""04.2015""):");
         DateTime date = DateTime.Parse(Console.ReadLine());
         string dayInWeek = date.DayOfWeek.ToString();
@@ -17,23 +22,45 @@ class Calendar
         string month = date.ToString("MMMM");
         month = month.PadLeft(((CellInteriorLength - month.Length)/2)+month.Length).PadRight(CellInteriorLength);
 
+        //Pattern for the walls
+        string[] patterns = new string[] { " ","~"," ","-" };
+        int patternCounter = 0;
+        string border = "";
+        while(border.Length < CellInteriorLength)
+        {
+            border =border +  patterns[patternCounter++ % patterns.Length];
+        }
+
+        //Array to match Padding
         string[] days2 = new string[7] { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" };
-        string pattern = " -";
-        string border = string.Concat(Enumerable.Repeat(pattern, CellInteriorLength/pattern.Length));
+        //Array for the days Format
         char[] days = new char[7]{'M','T','W','T','F','S','S'};
 
-        //Actual Printing
+        //Printing the top of the Calendar
         Console.WriteLine("+{0}+",border);
         Console.WriteLine();
         Console.WriteLine("|{0}|",month);
         Console.WriteLine();
         Console.WriteLine("+{0}+", border);
         Console.WriteLine();
-        Console.WriteLine("|{0,3} |{1,3} |{2,3} |{3,3} |{4,3} |{5,3} |{6,3} |",
-            days[0], days[1], days[2], days[3], days[4], days[5], days[6]);
+
+        //Print Day Format
+        for (int i = 0; i < days.Length; i++)
+        {
+            string dayFormat = days[i].ToString();
+            dayFormat = dayFormat.PadLeft((singleCellLength - dayFormat.Length) / 2 + dayFormat.Length).PadRight(singleCellLength);
+            if(i == 0)
+            {
+                Console.Write("|");
+            }
+            Console.Write("{0}",dayFormat);
+            Console.Write("|");
+        }
+        Console.WriteLine();
         Console.WriteLine();
         Console.WriteLine("+{0}+", border);
 
+        //Print numbers
         int padding = Array.IndexOf(days2, dayInWeek);
         int length = daysInMonth + padding;
         if(length % 7 != 0)
@@ -54,13 +81,16 @@ class Calendar
 
             if(i-padding <= daysInMonth && i - padding > 0)
             {
-                Console.Write("{0,4}|",i-padding);
+                string printDay = (i - padding).ToString();
+                printDay = printDay.PadLeft((singleCellLength - printDay.Length) / 2 + printDay.Length).PadRight(singleCellLength);
+                Console.Write("{0}|",printDay);
             }
             else
             {
-                Console.Write("{0,4}|", new string(' ', 4));
+                Console.Write("{0}|", new string(' ', singleCellLength));
             }
         }
+
         Console.WriteLine();
         Console.WriteLine("+{0}+", border);
     }
