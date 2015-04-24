@@ -29,7 +29,8 @@ class Calendar
         Console.WriteLine();
         Console.WriteLine("+{0}+", border);
         Console.WriteLine();
-        Console.WriteLine("|{0,3} |{1,3} |{2,3} |{3,3} |{4,3} |{5,3} |{6,3} |", days[0], days[1], days[2], days[3], days[4], days[5], days[6]);
+        Console.WriteLine("|{0,3} |{1,3} |{2,3} |{3,3} |{4,3} |{5,3} |{6,3} |",
+            days[0], days[1], days[2], days[3], days[4], days[5], days[6]);
         Console.WriteLine();
         Console.WriteLine("+{0}+", border);
 
