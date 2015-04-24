@@ -34,7 +34,12 @@ class Calendar
         Console.WriteLine("+{0}+", border);
 
         int padding = Array.IndexOf(days2, dayInWeek);
-        for (int i = 1; i <= daysInMonth+padding; i++)
+        int length = daysInMonth + padding;
+        if(length % 7 != 0)
+        {
+            length = (length / 7 + 1)* 7;
+        }
+        for (int i = 1; i <= length; i++)
         {
             if(i == 1)
             {
@@ -46,16 +51,17 @@ class Calendar
                 Console.Write("|");
             }
 
-            if(i<= padding)
-            {
-                Console.Write("{0,4}|",new string(' ',4));
-            }
-            else
+            if(i-padding <= daysInMonth && i - padding > 0)
             {
                 Console.Write("{0,4}|",i-padding);
             }
+            else
+            {
+                Console.Write("{0,4}|", new string(' ', 4));
+            }
         }
         Console.WriteLine();
+        Console.WriteLine("+{0}+", border);
     }
 }
 
