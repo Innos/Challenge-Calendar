@@ -1,0 +1,6 @@
+E:\Soft Uni\challenges\Eight Queens\Eight Queens\Eight Queens\bin\Debug\Eight Queens.exe.config
+E:\Soft Uni\challenges\Eight Queens\Eight Queens\Eight Queens\bin\Debug\Eight Queens.exe
+E:\Soft Uni\challenges\Eight Queens\Eight Queens\Eight Queens\bin\Debug\Eight Queens.pdb
+E:\Soft Uni\challenges\Eight Queens\Eight Queens\Eight Queens\obj\Debug\Eight Queens.csprojResolveAssemblyReference.cache
+E:\Soft Uni\challenges\Eight Queens\Eight Queens\Eight Queens\obj\Debug\Eight Queens.exe
+E:\Soft Uni\challenges\Eight Queens\Eight Queens\Eight Queens\obj\Debug\Eight Queens.pdb
