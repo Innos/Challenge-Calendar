@@ -4,3 +4,6 @@ E:\Soft Uni\challenges\Challenge 1 Calendar\Calendar\bin\Debug\Calendar.pdb
 E:\Soft Uni\challenges\Challenge 1 Calendar\Calendar\obj\Debug\Calendar.csprojResolveAssemblyReference.cache
 E:\Soft Uni\challenges\Challenge 1 Calendar\Calendar\obj\Debug\Calendar.exe
 E:\Soft Uni\challenges\Challenge 1 Calendar\Calendar\obj\Debug\Calendar.pdb
+E:\Soft Uni\Challenges and extras\Challenge 1 Calendar\Calendar\bin\Debug\Calendar.exe.config
+E:\Soft Uni\Challenges and extras\Challenge 1 Calendar\Calendar\obj\Debug\Calendar.exe
+E:\Soft Uni\Challenges and extras\Challenge 1 Calendar\Calendar\obj\Debug\Calendar.pdb
