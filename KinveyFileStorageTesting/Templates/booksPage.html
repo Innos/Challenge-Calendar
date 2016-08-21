@@ -1,0 +1,29 @@
+<h2>Welcome to the Book Collection</h2>
+<ul>
+    {{#books}}
+        <li data-id="{{id}}">
+            <p>Title: {{title}}</p>
+            <img src="{{imgUrl}}" width="150" height="150"/>
+            <p>Author: {{author}}</p>
+            <p>ISBN: {{isbn}}</p>
+            <button class="editBook" value="Edit Book">Edit Book</button>
+            <div class="editContainer">
+                <input class="titleEdit" placeholder="Title" value="{{title}}">
+                <input class="authorEdit" placeholder="Author" value="{{author}}">
+                <input class="isbnEdit" placeholder="ISBN" value="{{isbn}}">
+                <button class="edit" value="Edit Book">Edit Book</button>
+            </div>
+            <button class="deleteBook" value="Delete Book">Delete Book</button>
+        </li>
+    {{/books}}
+</ul>
+<div id="addContainer">
+    <input id="title" placeholder="Title">
+    <input id="author" placeholder="Author">
+    <input id="isbn" placeholder="ISBN">
+    <button id="addBook" value="Add Book">Add Book</button>
+</div>
+
+<input type="file" id="fileUpload">
+
+<a href="#/logout"><button>Logout</button></a>
